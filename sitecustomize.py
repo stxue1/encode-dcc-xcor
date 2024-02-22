@@ -1,5 +1,5 @@
+import multiprocessing
 import os, sys
-from multiprocessing import cpu_count
 
 def parse_cmdline():
     env_ncpu = None
@@ -32,6 +32,7 @@ def parse_cmdline():
             return ncpu
         # cpu_count.__doc__ = os.cpu_count.__doc__
         os.cpu_count = cpu_count
+        multiprocessing.cpu_count = cpu_count
 
 parse_cmdline()
 

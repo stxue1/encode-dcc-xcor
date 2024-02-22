@@ -8,7 +8,6 @@ USER root
 COPY envwrapper .
 RUN mv envwrapper /bin/envwrapper
 RUN chmod 755 /bin/envwrapper
-#CMD envwrapper /bin/bash
 COPY sitecustomize.py ./sitecustomize.py
 USER encode
 ENTRYPOINT ["envwrapper", "python", "/image_software/pipeline-container/src/xcor.py"]
